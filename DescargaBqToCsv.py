@@ -18,12 +18,12 @@ class Process:
 		print(requests.certs.where())
 		stream = open('config.yml', 'r')
 		settings = yaml.load(stream, yaml.SafeLoader)
-		os.environ["HTTP_PROXY"] = '{}'.format(settings['HTTP_PROXY']) 
+		os.environ["HTTP_PROXY"] = '{}'.format(settings['HTTP_PROXY'])
 		os.environ["HTTPS_PROXY"] = '{}'.format(settings['HTTPS_PROXY'])
 		
 		sql = """ 
-			SELECT*
-			FROM`tot-bi-cl-logistica-dev.acc_tot_corp_kpis_logisticos.instock_opt_base_gcp`
+			SELECT *
+			FROM `tot-bi-cl-logistica-dev.acc_tot_corp_kpis_logisticos.instock_opt_base_gcp`
 		"""
 		print('Intentando Query...')
 		# Execute Query
